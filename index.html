@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nexcent Website</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+	<nav>
+		<div class="nav-logo">
+			<img src="nav-icon.png" alt="logo-image">
+			<h2>Nexcent</h2>
+		</div>
+		<div class="nav-menu hide">
+			<ul>
+				<li><a href="https://www.w3schools.com/css/css_image_sprites.asp">Home</a></li>
+				<li><a href="https://fonts.google.com/selection/embed">Features</a></li>
+				<li><a href="https://fontawesome.com/icons/bars?f=classic&s=solid">Community</a></li>
+				<li><a href="https://chatgpt.com/c/681b67ea-b294-8011-87d4-1deed410e78a">Blog</a></li>
+				<li><a href="https://getbootstrap.com/">Pricing</a></li>
+				<button class="register">Register Now <i class="fa-solid fa-arrow-right"></i></button>
+			</ul>
+		</div>
+
+		<div class="nav-btn" onclick="dispaly()">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+
+	</nav>
+
+	<!---------------------------Hero Section-------------------------->
+
+	<div class="hero-page" id="hero">
+		<div class="left-container">
+			<div class="left-container-details">
+				<h2>Lessons and insights <span>from 8 years</span></h2>
+				<p>Where to grow your business as a photographer:site or social media?</p>
+				<button>Register</button>
+			</div>
+		</div>
+		<div class="right-container">
+			<img src="hero-img.png">
+		</div>
+	</div>
+
+	<!------------------------Clients Page----------------------------->
+
+
+	<div class="clients-page">
+		<div class="clients-container">
+			<h2>Our Clients</h2>
+			<p>We have been working with some Fortune 500+ clients</p>
+			<div class="client-icons">
+				<img src="Clients Logos.png">
+			</div>
+		</div>
+	</div>
+
+	<!-----------------------Community Page--------------------------->
+
+	<div class="community-page">
+		<div class="community-container">
+			<h2>Manage your entire community <br>in a single system</h2>
+			<p>Who is Nextcent suitable for?</p>
+			<div class="community-slider">
+				<div class="community-slider-container">
+					<div class="community-box1 c-boxes">
+						<div class="community-img">
+							<img src="community-img1.jpg">
+						</div>
+						<h3>Membership <br>Organisation</h3>
+						<p>Our membership management software provides full automation of membership renewals and payments</p>
+					</div>
+					<div class="community-box1 c-boxes">
+						<div class="community-img">
+							<img src="community-img2.jpg">
+						</div>
+						<h3>National<br> Association</h3>
+						<p>Our membership management software provides full automation of membership renewals and payments</p>
+					</div>
+					<div class="community-box1 c-boxes">
+						<div class="community-img">
+							<img src="community-img3.jpg">
+						</div>
+						<h3>Clubs And<br> Groups</h3>
+						<p>Our membership management software provides full automation of membership renewals and payments</p>
+					</div>
+				</div>
+			</div>
+		<!----arrows---->
+		<div class="arrows">
+			<button class="prev"><</button>
+			<button class="next">></button>
+		</div>
+
+		</div>
+	</div>
+
+	<!----------------------Unseen Page---------------------->
+	<!-- <div class="unseen-page">
+		<div class="left-container">
+			<img src="Frame 35.png">
+		</div>
+		<div class="right-container">
+			<h3>The unseen of spending three years</h3>
+		</div>
+	</div> -->
+
+	<script>
+		document.querySelector(".nav-btn").onclick=function(){
+			document.querySelector(".nav-menu").classList.toggle("hide");
+	}
+	
+	var nextBtn = document.querySelector('.next'),
+	prevBtn = document.querySelector('.prev'),
+	communityslider = document.querySelector('.community-slider'),
+	communitybox1 = document.querySelector('.community-box1')
+	
+
+nextBtn.onclick = function(){
+	showSlider('next')
+}
+prevBtn.onclick = function(){
+	showSlider('prev')
+}
+
+
+
+function showSlider(type){
+	let sliderItemDom = communityslider.querySelectorAll('.community-slider .community-box1')
+	if(type === 'next'){
+		communityslider.appendChild(sliderItemDom[0])
+		communityslider.classList.add('next')
+	}
+	else{
+		communityslider.prepend(sliderItemDom[sliderItemDom.length-1])
+		communityslider.classList.add('prev')
+	}
+}
+	</script>
+</body>
+</html>
